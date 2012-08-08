@@ -1,6 +1,7 @@
 body > nav {
   position: relative;
   background: $nav-bg;
+  border-bottom: 1px solid $nav-border-bottom;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
   h1 {
@@ -19,8 +20,15 @@ body > nav {
     color: $subtitle-color;
     font-weight: normal;
   }
-  fieldset.mobile-nav{ float: left; width: 48%;
-    select{ width: 100%; font-size: .8em; border: 1px solid #888;}
+  fieldset.mobile-nav {
+    float: right;
+    margin-top: .4em;
+    width: 48%;
+    select{
+      width: 100%;
+      font-size: .8em;
+      border: 1px solid #888;
+    }
   }
   ul { display: none; }
   @media only screen and (min-width: 550px) {
@@ -29,7 +37,7 @@ body > nav {
       @include horizontal-list(0);
       float: right;
       display: block;
-      padding-top: .15em;
+      padding-top: 1em;
     }
     ul li {
       margin: 0;
@@ -53,8 +61,13 @@ body > nav {
     fieldset[role=search]{ width: 99%; }
   }
   &.fixed {
-    position: fixed;
-    z-index: 2;
+    @include head-fixed-width();
+  }
+  &.white {
+    border-bottom: 1px solid #FFF;
+    h1 a, h1 a:visited, a:visited, a:hover, a:focus {
+        color: #FFF;
+    }
   }
 }
 

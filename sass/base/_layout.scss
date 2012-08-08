@@ -1,11 +1,16 @@
 $max-width: 1500px !default;
 
 // Padding used for layout margins
-$pad-min: 0 !default;
-$pad-narrow: 0 !default;
-$pad-medium: 0 !default;
-$pad-wide: 0 !default;
+$pad-min: 15px !default;
+$pad-narrow: 25px !default;
+$pad-medium: 35px !default;
+$pad-wide: 55px !default;
 
+/*$pad-min: 0px !default;
+$pad-narrow: 0px !default;
+$pad-medium: 0px !default;
+$pad-wide: 0px !default;
+*/
 $indented-lists: false !default;
 
 $header-font-size: 1em !default;
@@ -16,6 +21,12 @@ $nav-padding-top: 2.5em !default;
 $nav-padding-bottom: 1.5em !default;
 
 .group { @include pie-clearfix; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 body {
   -webkit-text-size-adjust: none;
@@ -37,6 +48,13 @@ body {
     @media only screen and (min-width: 992px) {
       padding-left: $pad-wide;
       padding-right: $pad-wide;
+    }
+  }
+  &#full-post {
+    > nav,
+    article.hentry {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
   div.pagination {
@@ -69,7 +87,6 @@ body {
 
 #main {
   clear: both;
-  border-top: 1px solid #222;
 }
 
 #content {
@@ -111,11 +128,19 @@ body {
 }
 
 @media only screen and (min-width: 992px) {
-  body > header { font-size: $header-font-size * 1.3; }
+  body > header {
+    font-size: $header-font-size * 1.3;
+  }
   #content {
     > div, > article {
       padding-top: $pad-wide/2;
       padding-bottom: $pad-wide/2;
+    }
+  }
+  #full-post {
+    #content > div {
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 }

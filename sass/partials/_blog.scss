@@ -27,7 +27,36 @@ article {
       }
     }
     &.image {
-      height: 900px;
+      background-attachment: fixed;
+      background-position: top center;
+      height: 780px;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      padding-top: 320px;
+      color: #FFF;
+      margin-top: -2.5em;
+      @media screen and (max-width: 1024px) {
+        background-size: cover;
+        background-attachment: scroll;
+        height: auto;
+        padding-bottom: 100px;
+      }
+      p, h1 {
+        color: #FFF;
+      }
+      h1, p.meta {
+        @include head-fixed-width();
+      }
+      p.meta {
+        top: 280px;
+      }
+      h1 {
+        font-size: 4.4em;
+        text-shadow: 0 0 7px rgba(0, 0, 0, .4);
+        @media screen and (max-width: 1024px) {
+          position: relative;
+        }
+      }
     }
     @media only screen and (min-width: 768px) {
       margin-bottom: 1.5em;
@@ -71,8 +100,6 @@ article {
     }
   }
   > footer {
-    padding-bottom: 2.5em;
-    margin-top: 2em;
     @extend .sans;
     p.meta {
       margin-bottom: .8em;
@@ -105,25 +132,13 @@ article + article {
         padding-top: 0;
         position: static;
       }
+      @media screen and (max-width:726px) {
+        float: none;
+      }
     }
     h1 {
       font-size: 1.6em;
       a { color: inherit; &:hover { color: $link-color-hover; } }
-    }
-  }
-  a[rel=full-article] {
-    background: darken($main-bg, 5);
-    display: inline-block;
-    padding: .4em .8em;
-    margin-right: .5em;
-    text-decoration: none;
-    color: mix($text-color, $text-color-light);
-    @extend .serif;
-    @include transition(background-color .5s);
-    &:hover {
-      background: $link-color-hover;
-      text-shadow: none;
-      color: $main-bg;
     }
   }
   footer {
@@ -155,10 +170,11 @@ article + article {
   }
 }
 
-#content div.entry-content {
+#content .hentry div.entry-content {
   background: $article-bg;
-  padding-top: 3em;
+  box-shadow: 0 -3px 3px -1px rgba(0, 0, 0, .2);
   position: relative;
+  padding: 3.5em 10% 3em;
   z-index: 10;
   li {
     margin-left: 1.1em;

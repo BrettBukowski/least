@@ -26,3 +26,18 @@
   @return $text-color;
 }
 
+@mixin head-fixed-width() {
+  left: 50%;
+  margin-left: -500px;
+  position: fixed;
+  width: 1000px;
+  z-index: 2;
+  @media only screen and (max-width: 1096px) {
+    margin-left: -45%;
+    width: 90%;
+  }
+  @media screen and (max-width: 1024px) {
+    position: absolute;
+  }
+}
+
