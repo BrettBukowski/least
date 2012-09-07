@@ -27,6 +27,7 @@ article {
       }
     }
     &.image {
+      background-color: #000;
       background-attachment: fixed;
       background-position: top center;
       height: 780px;
@@ -106,6 +107,7 @@ article {
       font-size: .85em;
       clear: both;
       overflow: hidden;
+      padding: 0 10%;
     }
     .byline + time:before, time +time:before, .comments:before, .byline ~ .categories:before {
       @extend .separator;
@@ -127,6 +129,7 @@ article + article {
       margin-right: 5em;
       padding-bottom: 0;
       padding-top: 0;
+      width: 13%;
       p.meta {
         font-size: .8em;
         padding-top: 0;
@@ -134,6 +137,7 @@ article + article {
       }
       @media screen and (max-width:726px) {
         float: none;
+        width: auto;
       }
     }
     h1 {
@@ -172,11 +176,14 @@ article + article {
 
 #content .hentry div.entry-content {
   background: $article-bg;
-  box-shadow: 0 -3px 3px -1px rgba(0, 0, 0, .2);
+  box-shadow: 0 -6px 6px -6px rgba(0, 0, 0, .2);
   position: relative;
   padding: 3.5em 10% 3em;
   z-index: 10;
   li {
     margin-left: 1.1em;
+  }
+  hr {
+    margin:2em 0;
   }
 }

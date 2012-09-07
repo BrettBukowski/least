@@ -21,7 +21,7 @@ $type-border: #ddd !default;
 $nav-bg: none !default;
 $nav-color: #AAA !default;
 $nav-color-hover: darken($nav-color, 25) !default;
-$nav-border-bottom: #222 !default;
+$nav-border-bottom: #D0D0D0 !default;
 
 $article-bg: #FFF !default;
 
@@ -33,7 +33,7 @@ $footer-border-top: #FFF !default;
 $footer-border-bottom: #FFF !default;
 $footer-link-color: darken($footer-bg, 38) !default;
 $footer-link-color-hover: darken($footer-color, 25) !default;
-$page-border-bottom: darken($footer-bg, 6) !default;
+$page-border-bottom: #D0D0D0 !default;
 
 
 /* Core theme application */
