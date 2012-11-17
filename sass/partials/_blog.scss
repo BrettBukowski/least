@@ -185,7 +185,9 @@ article + article {
     margin-left: 1.1em;
   }
   hr {
-    margin:2em 0;
+    border: 1px solid rgb(172, 168, 168);
+    border-width: 0 0 1px;
+    margin:4em 02em;
   }
   .footnotes {
     margin-top: 5em;
