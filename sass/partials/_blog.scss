@@ -119,6 +119,12 @@ article + article {
   .blog-index & {
   }
 }
+@mixin keepRight {
+  margin-left: 20%;
+  @media screen and (max-width:726px) {
+    margin-left: 0;
+  }
+}
 #content .blog-index {
   padding: { top: 0; bottom: 0; }
   article {
@@ -139,15 +145,19 @@ article + article {
         float: none;
         width: auto;
       }
+      h1 {
+        font-size: 1.6em;
+        a { color: inherit; &:hover { color: $link-color-hover; } }
+      }
     }
-    h1 {
-      font-size: 1.6em;
-      a { color: inherit; &:hover { color: $link-color-hover; } }
+    .entry-content {
+      @include keepRight;
     }
-  }
-  footer {
-    @extend .sans;
-    margin-top: 1em;
+    footer {
+      @include keepRight;
+      @extend .sans;
+      margin-top: 1em;
+    }
   }
 }
 
@@ -176,7 +186,7 @@ article + article {
 
 #content .hentry div.entry-content {
   background: $article-bg;
-  box-shadow: 0 -6px 6px -6px rgba(0, 0, 0, .2);
+  box-shadow: 0 -3px 3px -2px rgba(0, 0, 0, .2);
   line-height: 1.6em;
   position: relative;
   padding: 3.5em 10% 3em;
