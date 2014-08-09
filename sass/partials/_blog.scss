@@ -1,31 +1,44 @@
 article {
   padding-top: 1em;
-  a { @extend .force-wrap; }
+
   &.hentry {
     header {
       text-align: center;
     }
   }
+
+  a {
+    @extend .force-wrap;
+  }
+
   header {
     position: relative;
     padding-top: 2em;
     padding-bottom: 1em;
     margin-bottom: 1em;
+
     h1 {
       margin: 0;
-      a { text-decoration: none;
-        &:hover { text-decoration: underline; } }
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
+
     p {
       font-size: .9em;
       color: $text-color-light;
       margin: 0;
+
       &.meta {
         @extend .sans;
         text-transform: uppercase;
         position: absolute; top: 0; left: 45%;
       }
     }
+
     &.image {
       background-color: #000;
       background-attachment: fixed;
@@ -36,39 +49,56 @@ article {
       padding-top: 320px;
       color: #FFF;
       margin-top: -2.5em;
+
       @media screen and (max-width: 1024px) {
         background-size: cover;
         background-attachment: scroll;
         height: auto;
         padding-bottom: 100px;
       }
+
       p, h1 {
         color: #FFF;
       }
+
       h1, p.meta {
         @include head-fixed-width();
       }
+
       p.meta {
         top: 280px;
       }
+
       h1 {
         font-size: 4.4em;
+        line-height: 2em;
         text-shadow: 0 0 7px rgba(0, 0, 0, .4);
+
         @media screen and (max-width: 1024px) {
           position: relative;
         }
+        @media screen and (max-width: 550px) {
+          font-size: 2.5em;
+          line-height: 1.3em;
+          margin-bottom: 1em;
+        }
       }
     }
+
     @media only screen and (min-width: 768px) {
       margin-bottom: 2.6em;
       padding-bottom: 1em;
     }
   }
+
   h2 {
     padding-top: 0.8em;
   }
+
   .entry-content & h2:first-child, header + h2 { padding-top: 0; }
+
   h2:first-child, header + h2 { background: none; }
+
   .feature {
     padding-top: .5em;
     margin-bottom: 1em;
@@ -76,13 +106,17 @@ article {
     font-size: 2.0em; font-style: italic;
     line-height: 1.3em;
   }
+
   img, video, .flash-video {
     @extend .flex-content;
     @extend .basic-alignment;
     @include shadow-box;
   }
+
   video, .flash-video { margin: 0 auto 1.5em; }
+
   video { display: block; width: 100%; }
+
   .flash-video {
     > div {
       position: relative;
@@ -91,6 +125,7 @@ article {
       padding-top: 1px;
       height: 0;
       overflow: hidden;
+
       iframe, object, embed {
         position: absolute;
         top: 0;
@@ -100,8 +135,10 @@ article {
       }
     }
   }
+
   > footer {
     @extend .sans;
+
     p.meta {
       margin-bottom: .8em;
       font-size: .85em;
@@ -109,26 +146,27 @@ article {
       overflow: hidden;
       padding: 0 10%;
     }
+
     .byline + time:before, time +time:before, .comments:before, .byline ~ .categories:before {
       @extend .separator;
     }
   }
+}
 
-}
-article + article {
-  .blog-index & {
-  }
-}
 @mixin keepRight {
   margin-left: 20%;
+
   @media screen and (max-width:726px) {
     margin-left: 0;
   }
 }
 #content .blog-index {
   padding: { top: 0; bottom: 0; }
+
   article {
+    clear: both;
     padding-top: 2em;
+
     header {
       background: none;
       float: left;
@@ -136,23 +174,29 @@ article + article {
       padding-bottom: 0;
       padding-top: 0;
       width: 20%;
+
       p.meta {
         font-size: .8em;
         padding-top: 0;
         position: static;
       }
+
       @media screen and (max-width:726px) {
         float: none;
         width: auto;
       }
+
       h1 {
         font-size: 1.6em;
+
         a { color: inherit; &:hover { color: $link-color-hover; } }
       }
     }
+
     .entry-content {
       @include keepRight;
     }
+
     footer {
       @include keepRight;
       @extend .sans;
@@ -172,12 +216,17 @@ article + article {
   font-size: .95em;
   position: relative;
   padding: {top: 1.5em; bottom: 1.5em;}
+
   a {
     text-decoration: none;
     color: $text-color-light;
+
     &.prev { position: absolute; left: 0; }
+
     &.next { position: absolute; right: 0; }
+
     &:hover { color: $link-color-hover; }
+
     &[href*=archive] {
       &:before, &:after { content: '\2014'; padding: 0 .3em; }
     }
@@ -191,17 +240,21 @@ article + article {
   position: relative;
   padding: 3.5em 10% 3em;
   z-index: 10;
+
   li {
     margin-left: 1.1em;
   }
+
   hr {
     border: 1px solid rgb(172, 168, 168);
     border-width: 0 0 1px;
     margin:4em 0;
   }
+
   .footnotes {
     margin-top: 5em;
     font-size: smaller;
+
     a[rev="footnote"] {
       display: none;
     }

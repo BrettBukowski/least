@@ -4,15 +4,26 @@ body > nav {
   border-bottom: 1px solid $nav-border-bottom;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
+
+  @media screen and (max-width: 340px) {
+    text-align: center;
+  }
+
   h1 {
     display: inline-block;
     float: left;
     margin: 0;
+
     a, a:visited, a:hover {
       color: $title_color;
       text-decoration: none;
     }
+
+    @media screen and (max-width: 340px) {
+      float: none;
+    }
   }
+
   h2 {
     margin: .2em 0 0;
     @extend .sans;
@@ -20,17 +31,26 @@ body > nav {
     color: $subtitle-color;
     font-weight: normal;
   }
+
   fieldset.mobile-nav {
     float: right;
     margin-top: .4em;
     width: 48%;
+
     select{
       width: 100%;
       font-size: .8em;
       border: 1px solid #888;
     }
+
+    @media screen and (max-width: 340px) {
+      float: none;
+      margin: .4em auto 0;
+    }
   }
+
   ul { display: none; }
+
   @media only screen and (min-width: 550px) {
     font-size: .9em;
     ul {
